@@ -11,12 +11,32 @@
  * - ds_content: content of ds_content region
  */
 #}
-<{{ outer_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+<{{ outer_wrapper }}{{ attributes.addClass('ds-card-short', 'clearfix') }}>
 
   {{ title_suffix.contextual_links }}
 
-  <{{ ds_content_wrapper }}{{ ds_content_attributes }}">
-    {{ ds_content }}
-  </{{ ds_content_wrapper }}>
+  <div class="card-wrapper">
+
+    <{{ header_wrapper }}{{ attributes.addClass('header-wrapper') }}>
+      {{ header }}
+    </{{ header_wrapper }}>
+
+    <div class="info-row">
+
+      <{{ date_wrapper }}{{ attributes.addClass('date-wrapper') }}>
+        {{ date }}
+      </{{ date_wrapper }}>
+
+      <{{ location_wrapper }}{{ attributes.addClass('location-wrapper') }}>
+        {{ location }}
+      </{{ location_wrapper }}>
+
+    </div>
+
+    <{{ action_wrapper }}{{ attributes.addClass('action-wrapper') }}>
+      {{ action }}
+    </{{ action_wrapper }}
+
+  </div>
 
 </{{ outer_wrapper }}>
