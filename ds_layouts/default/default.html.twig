@@ -17,14 +17,14 @@
 
   {{ title_suffix.contextual_links }}
 
-  <{{ header_wrapper }}{{ attributes.addClass('header-wrapper') }}>
+  <{{ header_wrapper }}{{ header_wrapper_attributes.addClass('header-wrapper') }}>
     {{ header }}
-    <{{ header_inner_wrapper }}{{ attributes.addClass('header-wrapper-inner') }}>
+    <{{ header_inner_wrapper }}{{ header_inner_wrapper_attributes.addClass('header-wrapper-inner') }}>
       {{ header_inner }}
     </{{ header_inner_wrapper }}>
   </{{ header_wrapper }}>
 
-  <{{ detail_wrapper }}{{ detail_attributes }}">
+  <{{ detail_wrapper }}{{ detail_attributes.addClass('constrain') }}>
     {{ detail }}
   </{{ detail_wrapper }}>
 
