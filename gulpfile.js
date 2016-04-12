@@ -43,7 +43,7 @@ gulp.task('lint', function () {
 
 // Scripts lint first and then success only if it doesn't fail
 gulp.task('scripts', ['lint'], function () {
-  return gulp.src(js/script.js')
+  return gulp.src('js/script.js')
     .pipe(notify({
         title: 'SUCCESS!',
         message: 'JS task complete' }));
