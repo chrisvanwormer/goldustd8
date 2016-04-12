@@ -11,15 +11,17 @@
  * - detail: content of detail region
  * - header: content of header region
  * - header_inner: content of header_inner region
+ * - header_attributes: attributes for the header region
+ * - header_inner_attributes: attributes for the header_inner region
  */
 #}
 <{{ outer_wrapper }}{{ attributes.addClass('ds-default', 'clearfix') }}>
 
   {{ title_suffix.contextual_links }}
 
-  <{{ header_wrapper }}{{ header_wrapper_attributes.addClass('header-wrapper') }}>
+  <{{ header_wrapper }}{{ header_attributes.addClass('header-wrapper', 'constrain') }}>
     {{ header }}
-    <{{ header_inner_wrapper }}{{ header_inner_wrapper_attributes.addClass('header-wrapper-inner') }}>
+    <{{ header_inner_wrapper }}{{ header_inner_attributes.addClass('header-wrapper-inner') }}>
       {{ header_inner }}
     </{{ header_inner_wrapper }}>
   </{{ header_wrapper }}>
