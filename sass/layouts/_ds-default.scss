@@ -7,7 +7,7 @@
       background-color: $color-high-contrast;
     }
 
-    [class*='featured-img'],
+    [data-quickedit-field-id*='featured_image'],
     [class*='static-map'] {
       @include breakpoint($bp-default) {
         position: relative;

@@ -1731,7 +1731,7 @@ table.draggable .tabledrag-changed {
 }
 
 @media (min-width: 768px) {
-  .ds-default .header-wrapper [class*='featured-img'],
+  .ds-default .header-wrapper [data-quickedit-field-id*='featured_image'],
   .ds-default .header-wrapper [class*='static-map'] {
     position: relative;
     height: 512px;
