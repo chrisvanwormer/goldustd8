@@ -685,7 +685,7 @@ a:hover {
   text-transform: uppercase;
 }
 
-.header {
+header {
   padding-left: 15px;
   padding-right: 15px;
   background-color: #5b7f95;
@@ -693,25 +693,25 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-  .header {
+  header {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
 
 @media (min-width: 1024px) {
-  .header {
+  header {
     padding-left: 45px;
     padding-right: 45px;
   }
 }
 
-.header:before, .header:after {
+header:before, header:after {
   content: '';
   display: table;
 }
 
-.header:after {
+header:after {
   clear: both;
 }
 
@@ -1640,6 +1640,32 @@ table .contextual-links-wrapper {
 
 @media (min-width: 1024px) {
   [class*="page"][class*="sort"] .easy-breadcrumb_segment.easy-breadcrumb_segment-title, .easy-breadcrumb_segment:first-of-type {
+    font-size: 52px;
+  }
+}
+
+#block-goldust-breadcrumbs nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#block-goldust-breadcrumbs nav ol li:last-child {
+  font-size: 20px;
+  display: block;
+  line-height: 2;
+  padding-left: 0;
+}
+
+@media (min-width: 768px) {
+  #block-goldust-breadcrumbs nav ol li:last-child {
+    font-size: 28px;
+    display: inline;
+  }
+}
+
+@media (min-width: 1024px) {
+  #block-goldust-breadcrumbs nav ol li:last-child {
     font-size: 52px;
   }
 }

@@ -49,4 +49,30 @@
 
 }
 
+#block-goldust-breadcrumbs {
+  nav {
+    ol {
+      list-style: none;
+      padding:0;
+      margin:0;
+      li {
+        &:last-child {
+          font-size: 20px;
+          display: block;
 
+          @include breakpoint($screen-sm-min) {
+            font-size: 28px;
+            display: inline;
+          }
+
+          @include breakpoint($bp-large) {
+            font-size: 52px;
+          }
+
+          line-height: 2;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
