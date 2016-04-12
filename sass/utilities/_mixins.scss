@@ -1,0 +1,189 @@
+// @file
+// Custom sass mixins
+//
+// Define the custom mixins for your project here.
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+
+
+ // Indent the content .
+ // For screen sizes larger than 1200px, prevent excessively long lines of text
+ // by setting a max-width.
+
+@mixin constrain-width() {
+  max-width: $bp-max;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin vertically-centered-line($height...) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin width-padding-column() {
+  padding-left: 0;
+  padding-right: 0;
+
+  @include breakpoint($bp-default) {
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;
+  }
+
+  @include breakpoint($bp-large) {
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+  }
+}
+
+@mixin width-padding-non-column() {
+  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width / 2;
+
+  @include breakpoint($bp-default) {
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+  }
+
+  @include breakpoint($bp-large) {
+    padding-left: $grid-gutter-width * 1.5;
+    padding-right: $grid-gutter-width * 1.5;
+  }
+}
+
+@mixin width-padding-no-growth() {
+  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width / 2;
+}
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+@mixin cf() {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Old with max width: @mixin breakpoint($size1: '', $size2: '', $max-width: false, $no-mq-selector: false) {
+@mixin breakpoint($size1: '', $size2: '', $no-mq-selector: false, $max-width: false) {
+  @if $size1 == '' {
+    $size1: $bp-default; // Put your "main" or most-used breakpoint here to use it as a default
+  }
+
+  @if $no-mq-selector == true {
+    $no-mq-selector: '.oldie'; // this is my default catch all selector
+  }
+
+  // If you set a second size, you meant to put a limit on that media query
+  @if $size2 != '' {
+    @media (min-width: $size1) and (max-width: $size2) { @content; }
+  } @elseif $max-width == false {
+    // Default, `min-width` media query
+    @media (min-width: $size1) { @content; }
+  } @else {
+  // Alternative `max-width` media query
+    @media (max-width: $size1) { @content; }
+  }
+
+  @if $no-mq-selector {
+    #{$no-mq-selector} & { @content; }
+  }
+}
+
+@mixin transition($val...) {
+  -webkit-transition: $val;
+  transition: $val;
+}
+
+@mixin transform($val) {
+  -webkit-transform: $val;
+  -ms-transform: $val;
+  transform: $val;
+}
+
+@mixin is-button($luminosity: 'light', $padd-multiplier-v: 3, $padd-multiplier-h: 3) {
+  $button-color-bg: transparent;
+  $button-color-border: $color-offwhite;
+  $button-color-text: $color-offwhite;
+  $button-color-bg-hover: $ps-web-dark;
+
+  @if $luminosity == 'dark' {
+    $button-color-border: $color-border-default;
+    $button-color-text: $color-text;
+    $button-color-bg-hover: $ps-web-secondary;
+  }
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-decoration: none;
+  padding: ($grid-gutter-width / 4 ) * $padd-multiplier-v ($grid-gutter-width / 2.5) * $padd-multiplier-h;
+  display: inline-block;
+  background-color: $button-color-bg;
+  border: 1px solid $button-color-border;
+  color: $button-color-text;
+
+  &:hover {
+    background-color: $button-color-bg-hover;
+  }
+}
+
+@mixin action-triangle() {
+  // CSS Triangle, pointing right
+  // For Usage See: https://css-tricks.com/snippets/css/css-triangle/
+  // For explanation see: http://appendto.com/2013/03/pure-css-triangles-explained/
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid;
+  left: $grid-gutter-width / 2;
+  top: 22px;
+}
+
+// Stop long links from running off the page:
+// @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+

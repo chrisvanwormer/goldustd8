@@ -1,0 +1,41 @@
+default:
+  label: Goldust Default View
+  category: Goldust
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: ds_layouts/default/default
+  regions:
+    header:
+      label: Header
+    header_inner:
+      label: Header Inner
+    detail:
+      label: Detail
+card_short:
+  label: Goldust Card View - Short
+  category: Goldust
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: ds_layouts/card_short/card_short
+  regions:
+    header:
+      label: Header
+    date:
+      label: Date
+    location:
+      label: Location
+    action:
+      label: Action
+card:
+  label: Goldust Card View
+  category: Goldust
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: ds_layouts/card/card
+  regions:
+    header:
+      label: Header
+    teaser:
+      label: Teaser
+    action:
+      label: Action

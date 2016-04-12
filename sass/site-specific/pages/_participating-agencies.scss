@@ -1,0 +1,25 @@
+.view-participating-agencies {
+
+ .view-content {
+
+    h3 {
+      @include is-column();
+      @include make-xs-column(12);
+      color: $color-primary;
+      font-size: 2em;
+      margin-bottom: $grid-gutter-width / 4;
+
+      &:first-of-type {
+        margin-top: $grid-gutter-width / 2;
+      }
+    }
+
+    div {
+      @include is-column();
+      @include make-xs-column(12);
+      @include make-sm-column(6);
+      @include make-lg-column(4);
+      margin: ($grid-gutter-width / 5) 0;
+    }
+  }
+}

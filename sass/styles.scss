@@ -1,0 +1,42 @@
+// =====================================================
+// Partials to be shared with all .scss files.
+// !!!!!   DO NOT MODIFY THIS FILE   !!!!!
+//  For Site-specific modifications create and edit:
+// '/site-specific/_site-specific.scss'
+// =====================================================
+
+// BOOTSTRAP STUFFS
+@import 'utilities/settings'; // These are Goldust Settings + Bootstrap
+@import 'utilities/mixins'; // These are Goldust Mixins
+@import 'utilities/mixins/clearfix'; // Bootstrap Mixins
+@import 'utilities/mixins/grid-framework'; // Bootstrap Mixins
+@import 'utilities/mixins/grid'; // Bootstrap Mixins
+
+@import 'base/normalize';
+@import 'base/global';
+@import 'base/typography';
+@import 'base/misc';
+
+@import 'components/nys-global-nav-extras';
+@import 'components/admin';
+@import 'components/views-filters';
+@import 'components/breadcrumbs';
+@import 'components/sort';
+
+@import 'layouts/assumptions';
+@import 'layouts/front';
+@import 'layouts/ds-default';
+@import 'layouts/ds-card-global';
+@import 'layouts/ds-card-full';
+@import 'layouts/ds-card-short';
+
+// VENDOR STUFFS
+@import 'vendor/drupal-modules/calendar';
+@import 'vendor/drupal-modules/views_accordion';
+@import 'vendor/drupal-modules/adminimal_admin_menu';
+
+@import 'print'; // Your Print Stylesheet
+
+// All your site-specific configuration should be entered here.
+// File does not exist in a NEW clone of the repo, you'll need to create it yourself.
+@import 'site-specific/site-specific';

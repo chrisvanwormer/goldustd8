@@ -1,0 +1,38 @@
+table.draggable {
+  max-width: 900px;
+  min-width: 300px;
+  width: 50%;
+
+  a.tabledrag-handle {
+    margin: 0;
+    margin-top: 0.75em;
+
+    .handle {
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+      margin: 0;
+      background-position: 8px 7px;
+
+      &:hover {
+        background-position: 8px -13px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 1em;
+    margin-top: $grid-gutter-width / 2;
+    margin-bottom: $grid-gutter-width / 2;
+    float: left;
+  }
+
+  .tabledrag-changed {
+    font-size: 2em;
+    padding-top: 15px;
+    float: left;
+    display: block;
+    padding-left: 5px;
+    background-color: transparent;
+  }
+
+}

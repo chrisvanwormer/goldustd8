@@ -1,0 +1,92 @@
+.ds-card-short {
+  @include make-sm-column(4);
+
+  .card-wrapper {
+    min-height: 219px;
+
+    @include breakpoint($screen-sm-min, $screen-sm-max) {
+      min-height: 270px;
+    }
+  }
+
+  .header-wrapper,
+  .date-wrapper,
+  .location-wrapper {
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;
+  }
+
+  .header-wrapper {
+    height: 50px;
+  }
+
+  h2 {
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+
+  .info-row {
+    @include cf();
+  }
+
+  .date-wrapper {
+    @include is-column();
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(4);
+
+    p {
+      font-weight: bold;
+    }
+
+    // Month
+    p:first-of-type {
+      margin-bottom: 10px;
+    }
+
+    // Day
+    p:nth-of-type(2) {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    // Time
+    p:last-of-type {
+      font-size: 14px;
+    }
+
+  }
+
+  .location-wrapper {
+    @include is-column();
+    @include make-xs-column(7);
+    @include make-sm-column(6);
+    @include make-md-column(8);
+    margin-top: 5px;
+
+    p {
+      border-top: 12px solid $color-secondary;
+      padding-top: 5px;
+      overflow: hidden;
+      max-height: 5.3em;
+      -webkit-line-clamp: 3;
+
+      @include breakpoint($screen-xs-min) {
+        max-height: none;
+        -webkit-line-clamp: 9;
+      }
+
+      @include breakpoint($screen-md-min) {
+        max-height: 5.3em;
+        -webkit-line-clamp: 3;
+      }
+    }
+  }
+
+  .action-wrapper {
+    a:hover {
+      background-color: $color-high-contrast;
+    }
+  }
+
+}

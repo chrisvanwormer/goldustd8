@@ -1,0 +1,13 @@
+// Hide the Edit tabs for pages that shoudl not be edited directly
+.front {
+  .tabs-primary,
+  .block-workbench {
+    display: none;
+
+  }
+}
+
+// Make Contextual Links visible in Table elements
+table .contextual-links-wrapper {
+  position: relative;
+}

@@ -1,0 +1,52 @@
+// for Sort pages, we want to hide all the cruft before and after the page title. we style it down below the same as a :first-of-type selector
+[class*="page"][class*="sort"] {
+  .easy-breadcrumb {
+    a,
+    span {
+      display: none;
+    }
+  }
+}
+
+.block-easy-breadcrumb {
+  margin-bottom: 0;
+}
+
+.easy-breadcrumb_segment {
+
+  &:last-of-type {
+    font-size: 16px;
+
+    @include breakpoint($screen-sm-min) {
+      padding-left: $grid-gutter-width / 2;
+    }
+
+    @include breakpoint($bp-large) {
+      padding-left: $grid-gutter-width;
+      font-size: 20px;
+    }
+  }
+
+  // .*page*sort .easy-breadcrumb_segment.easy-breadcrumb_segment-title
+  // This @at-root is used to hit sorting page headers
+  @at-root [class*="page"][class*="sort"] &.easy-breadcrumb_segment-title,
+  &:first-of-type {
+    font-size: 20px;
+    display: block;
+
+    @include breakpoint($screen-sm-min) {
+      font-size: 28px;
+      display: inline;
+    }
+
+    @include breakpoint($bp-large) {
+      font-size: 52px;
+    }
+
+    line-height: 2;
+    padding-left: 0;
+  }
+
+}
+
+

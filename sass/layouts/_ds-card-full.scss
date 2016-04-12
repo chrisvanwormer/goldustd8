@@ -1,0 +1,137 @@
+// @at-root is used within the .ds-card class to break out and prepend .horizontal-card class to areas where horizontal cards will differ from the traditionally Vertical card layouts.
+
+.ds-card {
+  @include make-md-column(4);
+
+  &.horizontal-card {
+    @include make-md-column(12);
+  }
+
+  .card-wrapper {
+    @include cf();
+    min-height: 500px;
+
+    @include breakpoint($screen-xs-min, $screen-sm-max) {
+      min-height: 220px;
+    }
+
+    // .horizontal-card.ds-card .card-wrapper
+    @at-root .horizontal-card#{&} {
+      @include breakpoint($screen-sm-min) {
+        min-height: 220px;
+      }
+    }
+
+  }
+
+  .header-wrapper {
+    @include is-column();
+    @include make-xs-column(12);
+    @include make-xs-min-column(4);
+    @include make-md-column(12);
+    margin: 0;
+    padding: 0;
+
+    // .horizontal-card.ds-card .header-wrapper
+    @at-root .horizontal-card#{&} {
+      @include make-md-column(4);
+    }
+
+
+    a,
+    .simple-gmap-static-map {
+      position: relative;
+      overflow: hidden;
+      height: 220px;
+    }
+
+    img,
+    svg,
+    image {
+      max-width: inherit;
+      max-height: 100%;
+      width: auto;
+      position: absolute;
+      top: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      right: -9999px;
+      margin: auto;
+    }
+
+  }
+
+  .info-row {
+    @include is-column();
+    @include make-xs-column(12);
+    @include make-xs-min-column(8);
+    @include make-md-column(12);
+    min-height: 278px;
+
+    // .horizontal-card.ds-card .info-row
+    @at-root .horizontal-card#{&} {
+      @include make-md-column(8);
+    }
+
+    @include breakpoint($screen-xs-min, $screen-sm-max) {
+      min-height: 220px;
+    }
+
+    // .horizontal-card.ds-card .info-row
+    @at-root .horizontal-card#{&} {
+      @include breakpoint($screen-sm-min) {
+        min-height: 220px;
+      }
+    }
+
+  }
+
+  h2 {
+    margin-top: $grid-gutter-width / 2;
+    margin-bottom: 5px;
+  }
+
+
+  .date-display-single {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  h3,
+  .field-body {
+    font-size: 14px;
+    font-weight: normal;
+    color: $color-text;
+    max-height: 5.5em;
+    line-height: 1.375em;
+    overflow: hidden;
+    margin: .7em 0 .5em 0;
+    // Use these when there is better support for line clamping.
+    // Using jQuery dot dot dot to handle this now.
+    // text-overflow: ellipsis;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 4;
+    // -webkit-box-orient: vertical;
+
+    @include breakpoint($screen-sm) {
+      font-size: 16px;
+    }
+
+    @include breakpoint($screen-sm-min, $screen-sm-max) {
+      max-height: 2.75em;
+      -webkit-line-clamp: 2;
+    }
+
+    // .horizontal-card.ds-card h3
+    @at-root .horizontal-card#{&} {
+      @include breakpoint($screen-sm-min) {
+        max-height: 4.3em;
+        -webkit-line-clamp: 3;
+      }
+    }
+  }
+
+  .action-wrapper {
+    margin-left: -15px;
+  }
+}

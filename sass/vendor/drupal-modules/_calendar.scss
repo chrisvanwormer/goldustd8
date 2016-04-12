@@ -1,0 +1,224 @@
+.view .date-nav-wrapper {
+
+  margin: 0;
+
+  .date-nav {
+    margin-bottom: 0;
+    padding: 0;
+    height: 3.5em;
+
+    @include breakpoint($bp-default) {
+      height: 6.5em;// reset this for .year-view outside of this .view .date-nav-wrapper
+    }
+  }
+
+  .date-heading {
+    padding-top: .8em;
+
+    @include breakpoint($bp-default) {
+      padding-top: 2.5em; // reset this for .year-view outside of this .view .date-nav-wrapper
+    }
+
+    h3 {
+      font-size: 1em;
+
+      @include breakpoint($bp-default) {
+        font-size: 2em;
+      }
+    }
+  }
+
+
+  .pager {
+    @include cf();
+
+    width: 100%;
+    margin: 0;
+    height: 0;
+
+  }
+
+  .newie & {
+    .date-prev,
+    .date-next {
+      position: inherit;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+      height: 0;
+
+      a {
+        font-size: 1em;
+        color: $color-text-bright;
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 5em;
+        top: 0;
+        line-height: 4.5em;
+        background-color: $color-primary;
+        margin: 0;
+
+        @include breakpoint($bp-default) {
+          width: 6em;
+          font-size: 1.5em;
+          line-height: 6em;
+        }
+        &:hover {
+          background-color: $color-secondary;
+        }
+      }
+    }
+
+    .oldie & {
+      li.date-prev,
+      li.date-next {
+        list-style: none !important;
+        list-style-type: none !important; // Aggregation seems to break some of my custom css styles for oldie.
+      }
+    }
+
+    .date-prev {
+
+      a {
+        left: 0;
+        text-align: left;
+        padding-left: .5em;
+      }
+
+    }
+
+    .date-next {
+
+      a {
+        right: 0;
+        padding-right: .5em;
+      }
+
+    }
+  }
+
+}
+
+
+.view .year-view {
+
+  .date-nav {
+    height: 1.5em;
+  }
+  .date-heading {
+    padding-top: 0;
+
+  }
+
+}
+
+.calendar-calendar div.calendar {
+  font-size: .9em;
+}
+
+.calendar-calendar .week-view .full div.single-day div.weekview,
+.calendar-calendar .day-view .full div.single-day div.dayview,
+.calendar-calendar .month-view .full td.single-day div.monthview,
+.calendar-calendar .week-view .full td.single-day div.weekview,
+.calendar-calendar .day-view .full td.single-day div.dayview {
+  background-color: $color-high-contrast;
+}
+
+.calendar-calendar .week-view .full div.single-day div.weekview,
+.calendar-calendar .day-view .full div.single-day div.dayview {
+  border-color: $color-secondary;
+}
+.calendar-calendar .monthview,
+.calendar-calendar .dayview,
+.calendar-calendar .month-view .full td.multi-day div.monthview,
+.calendar-calendar .week-view .full td.multi-day div.weekview,
+.calendar-calendar .day-view .full td.multi-day div.dayview {
+  color: $color-text;
+}
+
+.calendar-calendar .month-view .full .inner .monthview,
+.calendar-calendar .week-view .full .inner .weekview,
+.calendar-calendar .day-view .full .inner .dayview {
+  border-radius: 0;
+  line-height: 1.5;
+}
+
+
+@include breakpoint($bp-default, "", false, true) {
+
+  .calendar-calendar .month-view td {
+    display:block;
+    width:100%;
+  }
+  .calendar-calendar .month-view .full tr.date-box,
+  .calendar-calendar .month-view .full tr.date-box td,
+  .calendar-calendar .month-view .full tr.multi-day,
+  .calendar-calendar .month-view .full tr.multi-day td {
+    height: auto;
+    max-height: none;
+    position: initial;
+  }
+  .calendar-calendar .month-view .full td.multi-day div.monthview,
+  .calendar-calendar .week-view .full td.multi-day div.weekview,
+  .calendar-calendar .day-view .full td.multi-day div.dayview {
+    background-color: $color-high-contrast;
+    height: auto;
+    max-height: none;
+
+  }
+  .calendar-calendar .month-view .full td.multi-day a {
+    display: block;
+  }
+  .calendar-calendar .month-view .full td.multi-day .inner .monthview .cutoff,
+  .calendar-calendar .week-view .full td.multi-day .inner .weekview .cutoff {
+    display: none;
+  }
+  .calendar-calendar .month-view .full .inner .monthview,
+  .calendar-calendar .week-view .full .inner .weekview,
+  .calendar-calendar .day-view .full .inner .dayview {
+    margin: 0;
+    position: initial;
+  }
+  .calendar-calendar .month-view .full td.multi-day .calendar.monthview .contents,
+  .calendar-calendar .week-view .full td.multi-day .calendar.weekview .contents {
+    position: initial;
+    width: 100%;
+  }
+ .calendar-calendar td, .calendar-calendar .month-view .full tr td.single-day.today,
+ .calendar-calendar tbody,
+ .calendar-calendar .month-view .full td.single-day .calendar-empty,
+ .calendar-calendar .month-view .full td.single-day.empty,
+ .calendar-calendar .month-view .full td.date-box.empty {
+    border:0;
+    background: none;
+  }
+  .calendar-calendar tr.date-box {
+    display:none;
+  }
+  .calendar-calendar table thead {
+    display:none;
+  }
+  .calendar-calendar td.no-entry, .calendar-calendar td.empty {
+   display:none;
+  }
+  .calendar-calendar .month-view .full td,
+  .calendar-calendar .week-view .full td,
+  .calendar-calendar .day-view td {
+    padding: 0;
+  }
+  .calendar-calendar .month-view .full td.single-day div.monthview,
+  .calendar-calendar .week-view .full td.single-day div.weekview,
+  .calendar-calendar .day-view .full td.single-day div.dayview,
+  .calendar-calendar .month-view .full td.multi-day div.monthview,
+  .calendar-calendar .week-view .full td.multi-day div.weekview,
+  .calendar-calendar .day-view .full td.multi-day div.dayview {
+    padding: 1em .5em;
+    float: left;
+    width: 100%;
+    clear: left;
+    margin-bottom: 1em;
+  }
+
+}

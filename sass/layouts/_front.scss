@@ -1,0 +1,31 @@
+.front {
+  .header {
+    display: none;
+  }
+
+  .block:first-of-type {
+    margin-bottom: 0;
+  }
+
+  .block__title {
+    text-align: center;
+    line-height: 1.2;
+    font-size: 48px;
+    margin-bottom: $grid-gutter-width;
+
+    b {
+      font-size: 16px;
+      color: $color-primary;
+      text-transform: uppercase;
+    }
+  }
+
+}
+
+#block-views-events-events-mini-block {
+  background-color: $ps-web-secondary;
+
+  .more-link a:hover {
+    background-color: $color-high-contrast;
+  }
+}

@@ -1,0 +1,74 @@
+.content {
+  .ui-accordion {
+    font-family: $base-font-family!important;
+    max-width: 800px;
+  }
+
+  .views-accordion-header {
+    margin-bottom: $grid-gutter-width / 2;
+  }
+
+  .ui-accordion-header,
+  .ui-accordion-content {
+    background-image: none;
+    background: none;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+  }
+
+  .ui-accordion-header {
+    @include transition(background-color 0.2s ease);
+
+    &:hover {
+      background-color: $color-border-light;
+    }
+
+    a {
+      // white-space: pre-wrap; // firefox wrap fix
+      -ms-word-break: normal;
+      word-break: normal;
+      word-wrap: break-word;
+      -moz-hyphens: none;
+    }
+  }
+
+  .ui-accordion-content {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: $grid-gutter-width / 2; // realign the left dots.
+    margin-bottom: $grid-gutter-width / 1.5;
+    margin-left: $grid-gutter-width; // realign the left dots.
+    font-size: 16px;
+    border-left: 3px dotted $color-border-light;
+
+    p {
+      &:first-of-type {
+        margin-top: $grid-gutter-width / 2;
+      }
+
+      &:last-of-type {
+        margin-bottom: $grid-gutter-width / 2;
+      }
+    }
+
+    a,
+    a:visited {
+      color: $color-link;
+    }
+  }
+
+  .ui-state-default a,
+  .ui-state-default a:link,
+  .ui-state-default a:visited {
+    color: $color-text;
+  }
+
+  .ui-state-default .ui-icon,
+  .ui-state-hover .ui-icon,
+  .ui-state-focus .ui-icon {
+    background-image: url(/misc/ui/images/ui-icons_454545_256x240.png);
+  }
+
+
+}

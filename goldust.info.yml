@@ -1,0 +1,6 @@
+name: Goldust
+type: theme
+description: Public Safety Cluster Subtheme (Based off Zen)
+core: 8.x
+libraries:
+  - goldust/global-styling

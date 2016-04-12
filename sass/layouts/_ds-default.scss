@@ -1,0 +1,219 @@
+.ds-default {
+  .header-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    @include breakpoint($bp-default, '', false, true) {
+      background-color: $color-high-contrast;
+    }
+
+    [class*='featured-img'],
+    [class*='static-map'] {
+      @include breakpoint($bp-default) {
+        position: relative;
+        height: $size-height-homepage-feature;
+        width: 100%;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+
+      @include breakpoint($bp-default) {
+        max-width: inherit;
+        max-height: 100%;
+        width: auto;
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+        z-index: 1;
+      }
+
+      @include breakpoint($bp-max) {
+        width: 100%;
+        height: auto;
+        max-height: inherit;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+  }
+
+  .header-wrapper-inner {
+    position: inherit;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    color: $color-text;
+    padding-right: $grid-gutter-width / 2;
+    padding-left: $grid-gutter-width / 2;
+
+    @include breakpoint($bp-default) {
+      color: $color-text-bright;
+      position: absolute;
+    }
+
+    @include breakpoint($bp-large) {
+      padding-right: $grid-gutter-width * 1.5;
+      padding-left: $grid-gutter-width * 1.5;
+    }
+
+    p,
+    h1,
+    .field-feature-1-txt-subheading {
+      max-width: 600px;
+    }
+
+    p {
+      @include breakpoint($bp-default) {
+        padding-top: $grid-gutter-width * 2.5;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      padding-top: $grid-gutter-width / 2;
+      padding-bottom: $grid-gutter-width / 2;
+      line-height: 1.25;
+      z-index: 3;
+
+      // Transparent background image that overlays the IMG below
+      &:before {
+        @include breakpoint($bp-default) {
+          content: " ";
+          background: url('../images/homepage-feature-overlay.png') repeat-y;
+          position: absolute;
+          height: $size-height-homepage-feature;
+          width: 1280px;
+          z-index: -1;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      @include breakpoint(0, $screen-xs-min) {
+        font-size: 1.7em;
+      }
+
+      @include breakpoint($bp-default) {
+        margin-top: 0;
+        font-size: 48px;
+        line-height: 54px;
+      }
+
+      @at-root .front & {
+
+        @include breakpoint($bp-default) {
+          padding-top: $grid-gutter-width * 2.5;
+        }
+      }
+    }
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+
+      a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: $grid-gutter-width / 2;
+        @include is-button("dark", $padd-multiplier-v: 2.5, $padd-multiplier-h: 3);
+        border-color: $ps-web-dark;
+
+        @include breakpoint($bp-default) {
+          @include is-button($padd-multiplier-v: 2.5, $padd-multiplier-h: 3);
+          margin-right: $grid-gutter-width;
+          float: left;
+          width: inherit;
+        }
+      }
+    }
+  }
+
+  h3 {
+    line-height: 1.75;
+  }
+
+  ul {
+    @include cf();
+    margin-top: $grid-gutter-width / 2;
+
+    a {
+      display: inline-block;
+
+    }
+  }
+
+  .field-date-separated {
+    display: none;
+
+    @include breakpoint($bp-default) {
+      display: block;
+      position: absolute;
+      height: 510px;
+      top: 0;
+      right: 0;
+      background-color: rgba(75,101,118,0.95);
+      width: 200px;
+      text-align: center;
+
+      p {
+        padding: $grid-gutter-width / 2 0;
+        letter-spacing: .03em;
+      }
+
+      // Month
+      p:first-of-type {
+        margin-top: $grid-gutter-width * 6;
+      }
+
+      // Day
+      p:nth-of-type(2) {
+        font-size: 56px;
+        font-weight: bold;
+        padding: $grid-gutter-width / 2 0;
+      }
+
+      // Time
+      p:last-of-type {
+        // font-size: 14px;
+      }
+    }
+  }
+
+  .field-body {
+    margin-top: $grid-gutter-width;
+  }
+
+  .youtube-container--responsive {
+    margin-top: $grid-gutter-width;
+
+    @include breakpoint($bp-default) {
+      position: relative;
+      padding-bottom: 25.72%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+      max-width: 50%;
+    }
+
+    iframe {
+      @include breakpoint($bp-default) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+}

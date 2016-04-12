@@ -1,0 +1,76 @@
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: $color-background-default;
+  position: relative;
+  color: $color-text;
+}
+
+.oldie-show {
+  display: none;
+}
+
+.oldie {
+  .oldie-show {
+    display: inherit;
+  }
+}
+
+.views-label {
+  font-weight: 700;
+}
+
+#block-masquerade-masquerade {
+  clear: both;
+  margin-top: $grid-gutter-width;
+
+  .form-item {
+    margin: 0;
+  }
+}
+
+.constrain,
+// FAQ page is a View Page
+.page-about-faqs .content,
+// This should pick up all the view Page types... MAYBEBAD
+.page-views .content,
+// User Login Page
+.page-user .content,
+// Masquerade block on homepage and non-column pages
+.front #block-masquerade-masquerade,
+.not-front.page-node #block-masquerade-masquerade,
+// Views with no content associated with them
+.view-empty
+{
+  @include constrain-width();
+  @include width-padding-non-column();
+}
+
+// Homepage Event View Block
+.front #block-views-events-events-block-sticky,
+//Homepage News Block
+.front #block-views-news-news-block-sticky,
+// Non Front, List Pages (news / events / downloads etc)
+.not-front.node-type-landing-page .content,
+// Masquerade block on Non-homepages
+.not-front.node-type-landing-page #block-masquerade-masquerade
+{
+  @include constrain-width();
+  @include width-padding-column();
+}
+
+// Non column is added as a view class for the rare (hopefully) cases we have a landing-page without card content on it
+// In this example we have is on the "download forms" pages
+.content .non-column
+{
+  @include cf();
+  @include is-column();
+  @include make-xs-column(12);
+}

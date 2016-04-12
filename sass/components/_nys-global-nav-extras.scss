@@ -1,0 +1,31 @@
+.nys-global-header {
+  z-index: 4; // Feature Block is 3.
+
+  // We needed a hover color to indicate that you had hovered over a nav item, but we also needed to add a focus attribute to the menu item as well.
+  > ul li.nys-global-active > a:hover, // Shouldn't need to be this specific...
+  > ul li.nys-global-active > a:focus, // Shouldn't need to be this specific...
+  > ul li > a:hover,
+  > ul li > a:focus,
+  .active-trail,
+  > ul li a.active-trail,
+  .nys-global-active, // this is temporary until active trail is added back
+  > ul li a.nys-global-active, // goddamn crazy nys global nav selectors
+  li a:hover,
+  li a:active,
+  li span:hover,
+  li span:active {
+    color: $color-highlight;
+  }
+
+  li li .active-trail,
+  li li a:hover,
+  li li span:hover {
+    color: $white;
+  }
+
+}
+
+.nys-global-footer {
+  clear: left;
+  margin-top: 40px;
+}

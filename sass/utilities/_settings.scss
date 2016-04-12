@@ -1,0 +1,214 @@
+//
+// Colors
+//
+
+// BEGIN NY.gov Official Colors
+// !!!!!NO NOT EDIT THESE!!!!!
+
+// Simple Color
+$black:          #000000;
+$white:          #ffffff;
+$color-offwhite: #f8fafa;
+
+// gradient blue
+$gradient-blue-start: #233e90;
+$gradient-blue-end:   #1ea9e1;
+
+// gold
+$primary-gold:  #f2a900;
+$seconday-gold: #ffd100;
+$tertiary-gold: #f3dd6d;
+
+// light blue
+$primary-light-blue:   #0077c8;
+$secondary-light-blue: #009cde;
+$tertiary-light-blue:  #6787b7;
+
+// dark blue
+$primary-dark-blue:   #002d72;
+$secondary-dark-blue: #1d428a;
+$tertiary-dark-blue:  #0047bb;
+
+// gray
+$primary-dark-gray:    #101820;
+$secondary-dark-gray:  #63666a;
+$tertiary-dark-gray:   #888b8d;
+$primary-light-gray:   #bbbcbc;
+$secondary-light-gray: #d0d0ce;
+$tertiary-light-gray:  #d9e1e2;
+
+// public safety
+$ps-dark:          #5b7f95;
+$ps-regular:       #7a99ac;
+$ps-light:         #b7c9d3;
+$ps-web-dark:      #4b6576;
+$ps-web-secondary: #e5ebee;
+
+
+// end of ny.gov colors
+// begin editing below this line.
+
+// begin custom color declarations
+
+$c-nysp-0: #2c0060;
+$c-nysp-1: #98879f;
+
+
+// END Custom Color Declarations
+
+// BEGIN Component Color selection
+
+$color-border-default: $secondary-light-gray;
+$color-border-light:   $tertiary-light-gray;
+$color-border-dark:    $primary-light-gray;
+
+$color-background-default: $white;
+
+// Tab styling.
+$tabs-container-bg: $white;
+$tabs-border:       $color-border-default;
+
+$color-text:          $primary-dark-gray;
+$color-text-bright:   $white;
+$color-link:          $primary-light-blue;
+$color-primary:       $ps-dark;
+$color-secondary:     $ps-regular;
+$color-high-contrast: $ps-light;
+$color-highlight:     $primary-gold;
+
+$color-nav-text:      $white;
+
+$color-mobile-header:   #d9d9d9;
+$color-not-quite-black: $color-text;
+
+// END Component Color selection
+
+//
+// Font faces, stacks and sizes.
+//
+
+// Compass' vertical_rhythm extension is a powerful tool to set up a vertical
+// rhythm for your entire page. You can see some of its mixins and functions in
+// use in the normalize.scss file.
+// @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+$base-font-size:   16px; // The font size set on the root html element.
+$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+
+$h1-font-size: 2    * $base-font-size;
+$h2-font-size: 1.5  * $base-font-size;
+$h3-font-size: 1.17 * $base-font-size;
+$h4-font-size: 1    * $base-font-size;
+$h5-font-size: 0.83 * $base-font-size;
+$h6-font-size: 0.67 * $base-font-size;
+
+// Font stacks.
+$times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+$times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
+
+$verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
+
+// For an explanation of why "sans-serif" is at the end of this list, see
+// http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+$courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// Now create some variables for the font stacks we want to use on this site.
+$base-font-family: $arial; // The font family set on the html element.
+$font-body:        $arial;
+$font-monospace:   $courier;
+// The amount lists, blockquotes and comments are indented.
+$indent-amount:    30px;
+
+// The height of the navigation container.
+$nav-height: 3em;
+
+$size-max-page-width: 1280px;
+$size-height-homepage-feature: 512px;
+
+
+//
+// Breakpoints
+//
+$bp-default:             768px;
+$bp-large:               1024px;
+$bp-max:                 $size-max-page-width;
+
+
+//****** BEGIN BOOTSTRAP GRID CLASSES ********
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width) !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width) !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;

@@ -1,0 +1,101 @@
+a {
+  color: $color-link;
+  text-decoration: none;
+  @include word-wrap();
+
+  &.url {
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+}
+
+.section-title {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-top: $grid-gutter-width;
+  text-align: center;
+
+  b {
+    color: $color-primary;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+}
+
+.header {
+  @include width-padding-non-column();
+
+  @include cf();
+  background-color: $color-primary;
+  color: $color-text-bright;
+}
+
+.block-title {
+  font-size: 2em;
+  line-height: 1.2;
+  margin-bottom: $grid-gutter-width;
+  padding-top: $grid-gutter-width;
+  text-align: center;
+
+  @include breakpoint($bp-default) {
+    font-size: 32px;
+  }
+
+  @include breakpoint($bp-large) {
+    font-size: 48px;
+  }
+
+  b {
+    color: $color-primary;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    &:after {
+      content: '\a';
+      white-space: pre;
+    }
+
+  }
+
+}
+
+// File Download pages to indicate PDF files
+.section-downloads {
+  h3 {
+    margin-bottom: $grid-gutter-width / 2;
+
+    [href$="pdf"] {
+      background-image: url('/modules/file/icons/application-pdf.png');
+      background-position: center left;
+      background-repeat: no-repeat;
+      padding-left: $grid-gutter-width / 1.5;
+    }
+
+    [href$="doc"],
+    [href$="docx"],
+    [href$="docm"],
+    [href$="dot"],
+    [href$="dotx"],
+    [href$="dotm"] {
+      background-image: url('/modules/file/icons/x-office-document.png');
+      background-position: center left;
+      background-repeat: no-repeat;
+      padding-left: $grid-gutter-width / 1.5;
+    }
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: $grid-gutter-width;
+  }
+}

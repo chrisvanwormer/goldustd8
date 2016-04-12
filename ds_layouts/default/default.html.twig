@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Display Suite Goldust Theme Default.
+ *
+ * Available variables:
+ * - outer_wrapper: outer wrapper element
+ * - detail_wrapper: wrapper around content
+ * - attributes: outer wrapper attributes
+ * - detail_attributes: attributes for detail region
+ * - detail: content of detail region
+ * - header: content of header region
+ * - header_inner: content of header_inner region
+ */
+#}
+<{{ outer_wrapper }}{{ attributes.addClass('ds-default', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+
+  <{{ header_wrapper }}{{ attributes.addClass('header-wrapper') }}>
+    {{ header }}
+    <{{ header_inner_wrapper }}{{ attributes.addClass('header-wrapper-inner') }}>
+      {{ header_inner }}
+    </{{ header_inner_wrapper }}>
+  </{{ header_wrapper }}>
+
+  <{{ detail_wrapper }}{{ detail_attributes }}">
+    {{ detail }}
+  </{{ detail_wrapper }}>
+
+</{{ outer_wrapper }}>
