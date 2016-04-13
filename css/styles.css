@@ -646,6 +646,22 @@ body {
   clear: both;
 }
 
+[data-quickedit-field-id*='informational_alert'] {
+  background-color: #b7c9d3;
+  font-size: 0.75em;
+  padding: 1.5em;
+  margin-top: 1.5em;
+}
+
+[data-quickedit-field-id*='informational_alert']:before {
+  content: "";
+  display: block;
+  background: url("../icons/notification.svg") no-repeat;
+  width: 2em;
+  height: 2em;
+  float: left;
+}
+
 a {
   color: #0077c8;
   text-decoration: none;
