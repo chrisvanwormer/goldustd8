@@ -1863,6 +1863,7 @@ table.draggable .tabledrag-changed {
 .ds-default .header-wrapper-inner h2,
 .ds-default .header-wrapper-inner [data-quickedit-field-id*='txt_subheading'] {
   max-width: 600px;
+  margin-bottom: 1em;
 }
 
 @media (min-width: 768px) {
