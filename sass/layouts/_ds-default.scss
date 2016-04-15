@@ -7,7 +7,7 @@
       background-color: $color-high-contrast;
     }
 
-    [data-quickedit-field-id*='featured_image'],
+    [data-quickedit-field-id*='featured_img'],
     [class*='static-map'] {
       @include breakpoint($bp-default) {
         position: relative;
@@ -67,8 +67,8 @@
     }
 
     p,
-    h1,
-    .field-feature-1-txt-subheading {
+    h2,
+    [data-quickedit-field-id*='txt_subheading'] {
       max-width: 600px;
     }
 
@@ -78,7 +78,7 @@
       }
     }
 
-    h1 {
+    h2 {
       margin: 0;
       padding-top: $grid-gutter-width / 2;
       padding-bottom: $grid-gutter-width / 2;
@@ -117,7 +117,7 @@
       }
     }
 
-    ul {
+    [data-quickedit-field-id*='m_link_links'] {
       padding: 0;
       list-style-type: none;
 
